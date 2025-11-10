@@ -172,4 +172,174 @@
             <ul style="color:var(--muted)">
               <li>Graduate with a strong foundation in software and web development.</li>
               <li>Prepare for EPS-TOPIK and related processes to work overseas.</li>
-              <li>Build AI-assisted
+              <li>Build AI-assisted tools and web apps as portfolio pieces.</li>
+            </ul>
+
+            <h3 style="margin-top:12px">Interests</h3>
+            <p style="color:var(--muted)">Coding, gaming, AI research experiments, and creating functional digital projects.</p>
+          </div>
+
+          <div>
+            <div class="card" style="display:flex;flex-direction:column;gap:10px">
+              <div style="font-weight:700">Quick Facts</div>
+              <div style="color:var(--muted);font-size:14px">19 years old • BSIT at STI • Kenith Mosquera</div>
+              <div style="height:8px"></div>
+              <div style="font-weight:700">Current Focus</div>
+              <div style="color:var(--muted);font-size:14px">Web development projects, learning Python & AI tools, EPS-TOPIK prep</div>
+            </div>
+
+            <div style="height:12px"></div>
+
+            <div class="card" style="text-align:center">
+              <div style="font-weight:700">Availability</div>
+              <div style="color:var(--muted);font-size:14px">Open to freelance, internships, and collaboration.</div>
+              <div style="margin-top:12px"><a class="btn" href="#contact">Get in touch</a></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects">
+        <h2 class="reveal">Projects</h2>
+        <div class="grid projects reveal" style="grid-template-columns:repeat(3, 1fr);margin-top:12px">
+
+          <article class="project">
+            <img src="https://via.placeholder.com/600x360?text=Project+1" alt="Project 1 placeholder">
+            <div class="body">
+              <h3 style="margin:0 0 6px">Personal Portfolio</h3>
+              <p style="color:var(--muted);margin:0 0 10px">A single-page responsive portfolio built with HTML, CSS, and vanilla JS showcasing my work and contact details.</p>
+              <div style="font-size:13px;color:var(--muted)">Role: Developer • Tools: HTML/CSS/JS</div>
+            </div>
+          </article>
+
+          <article class="project">
+            <img src="https://via.placeholder.com/600x360?text=Project+2" alt="Project 2 placeholder">
+            <div class="body">
+              <h3 style="margin:0 0 6px">E-Commerce Mock</h3>
+              <p style="color:var(--muted);margin:0 0 10px">A small e-commerce front-end demo that features product listing, filters, and responsive layout.</p>
+              <div style="font-size:13px;color:var(--muted)">Role: Frontend • Tools: JS, CSS Grid</div>
+            </div>
+          </article>
+
+          <article class="project">
+            <img src="https://via.placeholder.com/600x360?text=Project+3" alt="Project 3 placeholder">
+            <div class="body">
+              <h3 style="margin:0 0 6px">AI Chatbot Prototype</h3>
+              <p style="color:var(--muted);margin:0 0 10px">Prototype of a simple AI assistant that helps answer student questions using a small knowledge base and an LLM backend (concept).</p>
+              <div style="font-size:13px;color:var(--muted)">Role: Research • Tools: Python, APIs</div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <section id="skills">
+        <h2 class="reveal">Skills</h2>
+        <div class="card reveal" style="margin-top:12px;padding:14px;display:flex;flex-direction:column;gap:12px">
+          <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">Python</div>
+            <div class="skill">AI Tools (LLMs, APIs)</div>
+          </div>
+
+          <div style="color:var(--muted);font-size:14px">Comfortable building responsive UIs, small backend scripts in Python, and prototyping AI-augmented features.</div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 class="reveal">Contact</h2>
+        <div class="card reveal" style="margin-top:12px;display:grid;grid-template-columns:1fr 360px;gap:18px">
+
+          <div>
+            <p style="color:var(--muted)">Have a project, collaboration idea, or opportunity? Send me a message.</p>
+            <form id="contactForm">
+              <input id="name" placeholder="Your name" required>
+              <input id="email" type="email" placeholder="Your email" required>
+              <input id="subject" placeholder="Subject">
+              <textarea id="message" placeholder="Message" required></textarea>
+              <div style="display:flex;gap:8px">
+                <button type="submit" class="btn">Send</button>
+                <button type="button" class="btn ghost" id="resetBtn">Reset</button>
+              </div>
+            </form>
+          </div>
+
+          <aside style="display:flex;flex-direction:column;gap:12px;align-items:flex-start">
+            <div style="font-weight:700">Contact Info</div>
+            <div style="color:var(--muted)">Email: <a href="mailto:kenith@example.com">kenith@example.com</a></div>
+            <div style="color:var(--muted)">LinkedIn: <a href="#">linkedin.com/in/kenith</a></div>
+            <div style="color:var(--muted)">GitHub: <a href="#">github.com/kenith</a></div>
+
+            <div style="margin-top:12px;font-size:13px;color:var(--muted)">Tip: Replace the placeholders above with your real links and email.
+            </div>
+          </aside>
+
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div>© <span id="year"></span> Kenith Mosquera — Built with ❤️ & JavaScript</div>
+    </footer>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // theme toggle
+    const themeBtn = document.getElementById('themeBtn');
+    const root = document.documentElement;
+    function setTheme(theme){
+      document.body.setAttribute('data-theme', theme);
+      localStorage.setItem('site-theme', theme);
+      themeBtn.textContent = theme === 'dark' ? '🌗' : '🌞';
+    }
+    const saved = localStorage.getItem('site-theme') || 'dark';
+    setTheme(saved);
+    themeBtn.addEventListener('click', ()=> setTheme(document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'));
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        // allow external anchors with just '#'
+        const href = a.getAttribute('href');
+        if(href.length>1){
+          e.preventDefault();
+          document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      })
+    });
+
+    // reveal on scroll
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) e.target.classList.add('in-view');
+      });
+    },{threshold:0.12});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+    // contact form -> mailto fallback
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const name = encodeURIComponent(document.getElementById('name').value.trim());
+      const email = encodeURIComponent(document.getElementById('email').value.trim());
+      const subject = encodeURIComponent(document.getElementById('subject').value.trim() || 'Contact from portfolio');
+      const message = encodeURIComponent(document.getElementById('message').value.trim() + '\n\nFrom: ' + name + ' (' + email + ')');
+      const mailto = `mailto:kenith@example.com?subject=${subject}&body=${message}`;
+      // try to open mail client
+      window.location.href = mailto;
+    });
+    document.getElementById('resetBtn').addEventListener('click', ()=>form.reset());
+
+    // accessibility: reduce motion when user prefers
+    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.reveal').forEach(r=>{r.style.transition='none';});
+    }
+  </script>
+</body>
+</html>
